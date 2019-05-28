@@ -49,7 +49,6 @@
 								<id>checkstyle-validation</id>
 								<phase>validate</phase>
 								<configuration>
-									<skip>${disable.checks}</skip>
 									<configLocation>src/checkstyle/checkstyle.xml</configLocation>
 									<suppressionsLocation>src/checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
 									<includeTestSourceDirectory>true</includeTestSourceDirectory>
@@ -68,9 +67,6 @@
 						<executions>
 							<execution>
 								<phase>validate</phase>
-								<configuration>
-									<skip>${disable.checks}</skip>
-								</configuration>
 								<goals>
 									<goal>validate</goal>
 								</goals>
@@ -83,6 +79,7 @@
 				<module>spring-boot-project</module>
 				<!-- Samples are built via the invoker plugin -->
 				<module>spring-boot-samples-invoker</module>
+				<module>spring-boot-samples</module>
 				<module>spring-boot-tests</module>
 			</modules>
 		</profile>
