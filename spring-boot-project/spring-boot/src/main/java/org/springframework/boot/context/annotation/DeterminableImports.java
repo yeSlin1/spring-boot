@@ -35,15 +35,17 @@ import org.springframework.core.type.AnnotationMetadata;
  * Using {@link DeterminableImports} is particularly useful when working with Spring's
  * testing support. It allows for better generation of {@link ApplicationContext} cache
  * keys.
- *
- * @author Phillip Webb
+  @author Phillip Webb
  * @author Andy Wilkinson
  * @since 1.5.0
  */
+//java8新特性 函数式接口
+// 它们主要用在Lambda表达式和方法引用（实际上也可认为是Lambda表达式）上。
 @FunctionalInterface
 public interface DeterminableImports {
 
 	/**
+	 * 返回一组表示导入的对象。retur中的对象
 	 * Return a set of objects that represent the imports. Objects within the returned
 	 * {@code Set} must implement a valid {@link Object#hashCode() hashCode} and
 	 * {@link Object#equals(Object) equals}.
