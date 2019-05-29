@@ -120,6 +120,7 @@ public abstract class AutoConfigurationPackages {
 	/**
 	 * {@link ImportBeanDefinitionRegistrar} to store the base package from the importing
 	 * configuration.
+	 * 它其实返回了当前主程序类的 同级以及子级     的包组件
 	 */
 	static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
 

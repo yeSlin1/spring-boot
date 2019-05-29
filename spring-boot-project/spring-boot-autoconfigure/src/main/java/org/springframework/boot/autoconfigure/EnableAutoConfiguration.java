@@ -72,12 +72,12 @@ import org.springframework.core.io.support.SpringFactoriesLoader;
  * @see AutoConfigureAfter
  * @see SpringBootApplication
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.TYPE) // 注解的适用范围，其中TYPE用于描述类、接口（包括包注解类型）或enum声明
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Inherited
-@AutoConfigurationPackage
-@Import(AutoConfigurationImportSelector.class)
+@Documented // 表明这个注解应该被javadoc记录
+@Inherited  // 子类可以继承该注解
+@AutoConfigurationPackage //自动配置包
+@Import(AutoConfigurationImportSelector.class)  //导入自动配置的组件
 public @interface EnableAutoConfiguration {
 
 	String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
