@@ -119,18 +119,17 @@ public abstract class AutoConfigurationPackages {
 
 	/**
 	 * {@link ImportBeanDefinitionRegistrar} to store the base package from the importing
-	 * configuration.
-	 * 实现了spring中的ImportBeanDefinitionRegistrar  作为可以被@import注解导入的bean
+	 * configuration. 实现了spring中的ImportBeanDefinitionRegistrar 作为可以被@import注解导入的bean
 	 *
-	 * 它其实返回了当前主程序类的 同级以及子级     的包组件
+	 * 它其实返回了当前主程序类的 同级以及子级 的包组件
 	 */
 	static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
 
-		//这个方法是对bean的定义和解析
+		// 这个方法是对bean的定义和解析
 		@Override
 		public void registerBeanDefinitions(AnnotationMetadata metadata,
 				BeanDefinitionRegistry registry) {
-			//调用静态方法register
+			// 调用静态方法register
 			register(registry, new PackageImport(metadata).getPackageName());
 		}
 
@@ -142,15 +141,14 @@ public abstract class AutoConfigurationPackages {
 	}
 
 	/**
-	 * Wrapper for a package import.
-	 * 包里面配置的bean组件
+	 * Wrapper for a package import. 包里面配置的bean组件
 	 */
 	private static final class PackageImport {
 
 		private final String packageName;
 
 		PackageImport(AnnotationMetadata metadata) {
-			//利用spring的工具栏获取包名
+			// 利用spring的工具栏获取包名
 			this.packageName = ClassUtils.getPackageName(metadata.getClassName());
 		}
 
